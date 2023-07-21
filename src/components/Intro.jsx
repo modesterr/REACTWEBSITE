@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Woman from "../img/woman.png";
+import AnimatedShapes from "./AnimatedShapes";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -26,8 +28,46 @@ const Desc = styled.p`
   margin-top: 20px;
 `;
 
+const Info = styled.div`
+  margin-top: 50px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Button = styled.button`
+  padding: 15px;
+  background-color: darkblue;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+`;
+
+const Contact = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Phone = styled.span`
+  color: #f0667d;
+  font-weight: bold;
+`;
+
+const ContactText = styled.span`
+  color: grey;
+  margin-top: 5px;
+`;
+
 const Right = styled.div`
   width: 40%;
+`;
+
+const Image = styled.img`
+  width: 100%;
 `;
 
 function Intro() {
@@ -40,8 +80,18 @@ function Intro() {
           with our clients is the only way to have a real impact on their
           businesses
         </Desc>
+        <Info>
+          <Button>START A PROJECT</Button>
+          <Contact>
+            <Phone>Call Us +234-813-6016-162</Phone>
+            <ContactText>For any question or concern</ContactText>
+          </Contact>
+        </Info>
       </Left>
-      <Right></Right>
+      <Right>
+        <Image src={Woman} />
+      </Right>
+      <AnimatedShapes />
     </Container>
   );
 }
