@@ -2,3 +2,12 @@
   height: 100vh;
   background-color: red;
 }
+
+.title {
+  background-color: aqua;
+}
+
+/* <div className="title">
+          <b>good</b> design <br />
+          <b>good</b> business
+        </div>  */
