@@ -8,7 +8,6 @@ import Price from "./components/Price";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-
 const Container = styled.div`
   height: 100vh;
   overflow: hidden;
@@ -24,7 +23,6 @@ const Container = styled.div`
 // z-index: -1;
 // `;
 
-
 const IntroShape = styled.div`
   width: 100%;
   height: 100%;
@@ -36,7 +34,6 @@ const IntroShape = styled.div`
   z-index: -1;
 `;
 
-
 const FeatureShape = styled.div`
   width: 100%;
   height: 100%;
@@ -47,7 +44,6 @@ const FeatureShape = styled.div`
   background-color: pink;
   z-index: -1;
 `;
-
 
 const ServiceShape = styled.div`
   width: 100%;
@@ -71,35 +67,34 @@ const PriceShape = styled.div`
   z-index: -1;
 `;
 
-
 const App = () => {
-  return (
-    <>
-      <Container>
-        <Navbar />
-        <Intro />
-        <IntroShape />
-      </Container>
-      <Container>
-        <Feature />
-        <FeatureShape/>
-      </Container>
-      <Container>
-        <Service/>
-        <ServiceShape />
-      </Container>
-      <Container>
-        <Price/>
-        <PriceShape/>
-      </Container>
-      <Container>
-        <Contact/>
-        </Container>
-        <Container>
-        <Footer/>
-      </Container>
-    </>
-  );
+	return (
+		<>
+			<Container>
+				<Navbar />
+				<Intro />
+				<IntroShape />
+			</Container>
+			<Container>
+				<Feature />
+				<FeatureShape />
+			</Container>
+			<Container>
+				<Service />
+				<ServiceShape />
+			</Container>
+			<Container>
+				<Price />
+				<PriceShape />
+			</Container>
+			<Container>
+				<Contact />
+			</Container>
+			<Container>
+				<Footer />
+			</Container>
+		</>
+	);
 };
 
 export default App;
