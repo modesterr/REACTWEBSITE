@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Feature from "./components/Feature";
 import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
-import Service from "./components/service";
+import Service from "./components/Service";
 import Price from "./components/Price";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -73,6 +73,8 @@ const PriceShape = styled.div`
 
 
 const App = () => {
+
+  const smallScreen = window.screen.width <= 480 ? true : false;
   return (
     <>
       <Container>
@@ -86,7 +88,7 @@ const App = () => {
       </Container>
       <Container>
         <Service/>
-        <ServiceShape />
+        {!smallScreen && <ServiceShape />}
       </Container>
       <Container>
         <Price/>
@@ -94,8 +96,6 @@ const App = () => {
       </Container>
       <Container>
         <Contact/>
-        </Container>
-        <Container>
         <Footer/>
       </Container>
     </>

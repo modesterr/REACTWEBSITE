@@ -10,11 +10,19 @@ import { useState } from 'react';
 const Container= styled.div`
 display: flex;
 height: 100%;
+
+@media only screen and (max-width: 480px) {
+   flex-direction:column;
+  }
 `;
 
 const Left= styled.div`
 width: 50%;
 position: relative;
+
+@media only screen and (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const Image=styled.img`
@@ -33,17 +41,33 @@ bottom: 0;
 right: 0;
 left: 10%;
 margin: auto;
+
+@media only screen and (max-width: 480px) {
+    width: 100%;
+    height: 70%;
+    left: 0;
+}
 `;
 
 
 const Right= styled.div`
 width: 50%;
+
+@media only screen and (max-width: 480px) {
+    width: 100%;
+    /* height: 100%; */
+  }
 `;
 
 const Wrapper= styled.div`
 padding: 50px;
 display: flex;
 flex-direction: column;
+
+@media only screen and (max-width: 480px) {
+    padding: 20px;
+    
+  }
 `;
 
 const Title= styled.h1``;
@@ -72,14 +96,42 @@ margin-top: 50px;
 cursor: pointer;
 display: flex;
 align-items: center;
+
+@media only screen and (max-width: 480px) {
+    margin-top: 25px;
+    align-self: center;
+    padding: 12px;
+}   
 `;
 
 const Icon=styled.img`
 width: 20px;
 margin-right: 10px;
 `;
+
+const Modal = styled.div`
+width: 100vw;
+height: 100vh;
+position: absolute;
+left: 0;
+top: 0;
+background-color: rgba(0,0,0,0.5);
+`;
+
+const CloseButton = styled.button`
+font-weight: bold;
+position: absolute;
+background-color: white;
+padding: 5px;
+border: none;
+border-radius: 5px;
+right: 18px;
+top: 11%;
+`;
+
 function Service() {
   const [open, setOpen] = useState(false);
+  const smallScreen = window.screen.width <= 480 ? true : false;
   return (
     <Container>
       <Left>
@@ -105,6 +157,18 @@ function Service() {
         
         </Wrapper>
       </Right>
+      {smallScreen && open && (
+        <Modal>
+          <Video 
+          open={open} 
+          autoPlay 
+          loop 
+          controls 
+          src={Nls} />
+          <CloseButton onClick={()=>(setOpen(false))}>close</CloseButton>
+        </Modal>
+      )}
+
     </Container>
   )
 }
